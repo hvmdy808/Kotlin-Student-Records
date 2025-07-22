@@ -1,5 +1,14 @@
 import java.util.LinkedList
 
+//Req5:
+fun report(studMap: Map<String, Int>) {
+    if(studMap.isNotEmpty()){
+        println("Students who passed: ")
+        studMap.entries.filter { it.value >= 60 }
+            .map { (name, score) -> "$name: $score" }.forEach { println(it) }
+    }
+}
+
 fun main() {
     // Req1:
     // I made the map and the list immutable and the set mutable so i confirm that i used both versions of collections
@@ -37,4 +46,9 @@ fun main() {
         "$acc$name: $score | "
     }.removeSuffix(" | ")
     println(result)
+
+
+
+    //Req5:
+    report(studMap)
 }
