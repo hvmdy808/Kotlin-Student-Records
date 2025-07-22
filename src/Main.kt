@@ -3,8 +3,9 @@ import java.util.LinkedList
 fun main() {
     // Req1:
     // I made the map and the list immutable and the set mutable so i confirm that i used both versions of collections
+    // I did not read the 3rd req so i thought that the score means gpa but, i modified them to be a grade out of 100
     val studList = listOf("Ahmed", "Mohamed", "Khaled", "Alaa", "Hamdy")
-    val studMap = mapOf("Ahmed" to 3.1, "Mohamed" to 3.5, "Khaled" to 3.4, "Alaa" to 4, "Hamdy" to 3.3)
+    val studMap = mapOf("Ahmed" to 78, "Mohamed" to 81, "Khaled" to 85, "Alaa" to 100, "Hamdy" to 94)
     val gradSet = mutableSetOf("Ahmed", "Mohamed")
     println(studList)
     println(studMap)
@@ -17,4 +18,11 @@ fun main() {
             println("Name: $stud -- Score: ${studMap[stud]}")
         }
     }
+
+
+    // Req3:
+    studList.filter { studMap[it]!! > 80 }
+        .map { stud -> stud.uppercase() }
+        .forEach { println(it) }
+
 }
