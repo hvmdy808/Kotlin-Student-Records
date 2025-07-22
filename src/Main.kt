@@ -10,4 +10,11 @@ fun main() {
     println(studMap)
     println(gradSet)
 
+
+    // Req2:
+    for (stud in studList) {
+        if(!gradSet.contains(stud)) {
+            println("Name: $stud -- Score: ${studMap[stud]}")
+        }
+    }
 }
