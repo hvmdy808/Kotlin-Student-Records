@@ -25,4 +25,16 @@ fun main() {
         .map { stud -> stud.uppercase() }
         .forEach { println(it) }
 
+
+    //Req4:
+    //Total score:
+    val total:Int = studList.map { it -> studMap[it]!! }
+        .reduce { a, b -> a+b }
+    println("Total score: $total")
+
+    //Fold:
+    val result = studMap.entries.fold("") { acc, (name, score) ->
+        "$acc$name: $score | "
+    }.removeSuffix(" | ")
+    println(result)
 }
